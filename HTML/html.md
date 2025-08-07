@@ -87,9 +87,11 @@
 - 사용자가 입력한 데이터를 백엔드로 전송하는 방법을 반드시 숙지!!!!
 
 ### font awesome 사이트 무료 아이콘 CDN
+ ```
  <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 />
+```
 
 
