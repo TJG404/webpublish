@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 사용법</title>
+    <!--
+        - Inline 방식 : HTML 태그에 style 속성을 추가하여 작성
+          syntax> style = "프로퍼티 : 값;"
+        - Internal 방식 : HTML 파일의 head 태그에 페이지에서 호출되는 style 속성 정리
+        - External 방식 : style 속성을 별도의 파일로 생성하여 호출        
+    -->
+    <style>
+        .internal {
+            color: blue;
+        }
+    </style>
+    <link rel="stylesheet"  href="external.css" />
+</head>
+<body>
+    <h1 style="color:red;">CSS 사용법 - Inline 방식</h1>
+    <h1 class="internal">CSS 사용법 - Internal 방식</h1>
+    <h1 class="external">CSS 사용법 - External 방식</h1>
+</body>
+</html>
+
+
+
+
+
+
+

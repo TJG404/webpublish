@@ -1,3 +1,6 @@
+## !! 크로스 브라우징(Cross Browsing) 
+- 작성한 UI(HTML) 페이지를 모든 브라우저에서 동일한 모습으로 출력 
+
 ## 1. HTML(HyperText Markup Language)
 - 팀 버너스 개발, W3C에서 HTML 버전 등 관리
 - 태그로 구성되며, 시작태그<>, 종료태그</>로 구성
