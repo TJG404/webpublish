@@ -21,7 +21,7 @@
 - pseudo class selector : 정해진 이벤트적 요소를 실행하면서 스타일 적용, :pseudo 클래스명,:hover, :focus...
 - nth-child pseudo class selector : 반복되는 태그들의 순서를 통해 스타일 적용, :first-child, nth-child(수열)...
 - status pseudo class selector : HTML 태그의 disable, checked 속성을 통해 스타일 적용, :disabled, :checked
-
+ 
 
 ## 4. 단위 - pixel, %, em, rem ..
 - pixel은 고정된 길이로 설정, 화면 크기가 변경되어도 사이즈가 유지
