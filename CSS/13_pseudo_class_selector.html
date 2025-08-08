@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Class Selector</title>
+    <style>
+        h1::before {  
+            /* h1 태그 앞에 content에 해당하는 내용을 생성하여 추가하고, 글자색상 초록 */
+            content: "h1태그 Before";            
+            color: red;
+        }
+        h1::after {  /* h1 태그 뒤에 content에 해당하는 내용을 생성하여 추가하고, 글자색상 초록 */
+            content: "h1태그 After";
+            color: green;
+        }
+        .text-color { color: white; }
+        a.naver:hover {  background-color: blue;  color: white;}
+        a.google:hover {  background-color: tomato;  color: white;}
+        a.daum:hover {  background-color: aquamarine; color: white; }
+
+        a.naver:active { text-decoration: none;}
+        a.naver:visited { color: red; }
+
+        input:focus {
+            background-color: bisque;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1>Pseudo Class Selector</h1>
+    <p>
+        <a href="http://www.naver.com" class="naver">Naver</a>
+        <a href="http://www.google.com" class="google">Google</a>
+        <a href="http://www.daum.net" class="daum">Daum</a>
+    </p>
+    <form action="#">
+        <ul>
+            <li>
+                <label for="name">이름</label>
+                <input type="text" name="name">
+            </li>
+            <li>
+                <label for="address">주소</label>
+                <input type="text" name="address">
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

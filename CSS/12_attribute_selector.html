@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Selector</title>
+    <style>
+        /* target="_blank" 태그를 찾아, 배경색을 초록색으로 변경 */
+        [target="_blank"] { background-color: green; }
+        [type="submit"] { background-color: aqua; }
+        [for="address"] { color: red; }
+        input[type="text"] { background-color: yellow;}
+    </style>
+</head>
+<body>
+    <h1>Attribute Selector</h1>
+    <p>
+        <a href="#" target="_blank">Naver</a>
+        <a href="#">Google</a>
+        <a href="#" target="_blank">Daum</a>
+    </p>
+    <form action="#">
+        <ul>
+            <li>
+                <label for="name">이름</label>
+                <input type="text" name="name">
+            </li>
+            <li>
+                <label for="address">주소</label>
+                <input type="text" name="address">
+            </li>
+            <li>
+                <label for="password">패스워드</label>
+                <input type="password" name="password">
+            </li>
+            <li>
+                <button type="submit">전송</button>
+                <button type="reset">다시쓰기</button>
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Selector</title>
+    <style>
+        input:disabled {
+            color: red;
+        }
+        input[type="checkbox"]:checked {
+            accent-color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <h1>Status Selector</h1>
+    <form action="#">
+        <ul>
+            <li>
+                <label for="id">아이디</label>
+                <input type="text" name="id" value="hong1234" disabled>
+            </li>
+            <li>
+                <label for="pass">패스워드</label>
+                <input type="password" name="pass">
+            </li>
+            <li>
+                <label for="">과목 선택</label>
+                <input type="checkbox" name="subject" value="java" checked><span>JAVA</span>
+                <input type="checkbox" name="subject" value="html"><span>HTML</span>
+            </li>
+            <li>
+                <button type="button">로그인</button>
+                <button type="reset">다시쓰기</button>
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

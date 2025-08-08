@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTH-Child Selector</title>
+    <style>
+        ul > li:first-child,
+        ul > li:last-child {
+            background-color: yellow;
+        }
+        ul > li:nth-child(3) {
+            color: red;
+        }
+        td { 
+            padding: 5px 30px;
+        }
+        /* tr:nth-child(2) td {
+            color: blue;
+            background-color: aquamarine;
+        } */
+
+        /* 테이블의 짝수행에 배경색 정의 */
+        tr:nth-child(even) {
+            color: white;
+            background-color: lightgray;            
+        }
+    </style>
+</head>
+<body>
+    <h1>Nth-child pseudo selector</h1>
+    <h3>Subject List</h3>
+    <ul>
+        <li>Java</li>
+        <li>MySQL</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+    </ul>
+    <table border="1">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+</body>
+</html>
