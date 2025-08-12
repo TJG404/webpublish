@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition Style</title>
+    <style>
+        .frame {
+            width: 300px;
+            height: 500px;
+            border: 1px solid gray;
+        }
+        .frame p {
+            background-color: aquamarine;
+            height: 50px;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .frame div {
+            height: 0;
+            background-color: tomato;
+
+            /* transition-duration: 3s;
+            transition-property: height;
+            transition-delay: 0s;
+            transition-timing-function: ease-in-out; */
+            transition: height 3s 0s ease-in-out ;
+        }
+        .frame p:hover +div{
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Transition Style</h1>
+    <article class="frame">
+        <p>Frame Title</p>
+        <div></div>
+    </article>
+</body>
+</html>
