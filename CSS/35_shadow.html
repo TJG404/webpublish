@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Style</title>
+    <style>
+        .text {
+            text-shadow: 10px 5px 0 rgba(97, 89, 89, 0.5);
+        }
+        .box {
+            width: 30%;
+            height: 50px;
+            background-color: bisque;
+            /* box-shadow: 5px 5px 10px rgba(97, 89, 89, 0.5); */
+            box-shadow: 28px 8px 43px -11px rgba(0,0,0,0.68);
+            -webkit-box-shadow: 28px 8px 43px -11px rgba(0,0,0,0.68);
+            -moz-box-shadow: 28px 8px 43px -11px rgba(0,0,0,0.68);
+        }
+        input[type="text"] {
+            border: 1px solid rgb(38, 201, 238);
+            border-radius: 5px;
+            outline: none;
+        }
+        input[type="text"]:focus {
+            box-shadow: inset 0 0 5px rgba(38, 201, 238, 0.68);
+        }
+        .modal {
+            width: 300px;
+            height: 100px;
+            background-color: bisque;
+            border: 1px solid silver;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: -150px;
+            margin-top: -50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shadow Style</h1>
+    <h2 class="text">text-shadow</h2>
+    <h2 class="box">box-shadow</h2>
+    <hr>
+    <input type="text">
+    <hr>
+    <div class="modal">modal content!!</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Style</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .parent {
+            height: 100px;
+            border: 3px solid green;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            gap: 20px;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .parent div {
+            background-color: bisque;
+            border: 1px salmon solid;
+            padding: 10px 20px;
+        }
+        .parent div:first-child {
+            background-color: aqua;            
+        }
+        .parent div:last-child {
+            background-color: yellow;            
+        }
+        /* header menu style */
+        header {
+            border: 2px solid blue;
+            width: 100%;
+            height: 200px;
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .header-logo > img { width: 400px; border: 1px solid green;}
+        .header-left > ul, 
+        .header-right > ul {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+            border: 1px solid red;
+        }
+        .header-left > ul {
+            width: 400px;
+            justify-content: space-around;
+            padding-top: 10px;
+        }
+        .header-right > ul {
+            width: 400px;
+            /* justify-content: space-around; */
+            gap: 20px;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flex Style</h1>
+    <div class="parent">
+        <div>Flex Item</div>
+        <div>Flex Item</div>
+        <div>Flex Item</div>
+        <div>Flex Item</div>
+        <div>Flex Item</div>
+    </div>
+    <header>
+        <nav class="header-left">
+            <ul>
+                <li>
+                    <a href="#">인스타그램</a>
+                </li>
+                <li>
+                    <a href="#">유투브</a>
+                </li>
+                <li>
+                    <a href="#">페이스북</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-logo">
+            <img src="https://www.lottecinema.co.kr/NLCHS/Content/images/common/logo.png" alt="롯데시네마 로고">
+        </div>
+        <nav class="header-right">
+            <ul>
+                <li>
+                    <a href="#">멤버십</a>
+                </li>
+                <li>
+                    <a href="#">고객센터</a>
+                </li>
+                <li>
+                    <a href="#">단체관람/대관문의</a>
+                </li>
+                <li>
+                    <a href="#">로그인</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
