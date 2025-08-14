@@ -40,7 +40,7 @@ button {
 a {
     text-decoration: none;
 }
-section {
+section, footer {
     padding: 4rem;
     text-align: center;
 }
@@ -296,4 +296,75 @@ section.container {
 }
 .project-metadata:hover {
     opacity: 0.8;
+}
+
+/*
+    Testimonials
+*/
+.testimonials {
+    margin: 3rem;
+}
+.testimonial {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.testimonial:nth-child(even) .testimonial-img {
+    order: 1;
+}
+.testimonial-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.38);
+}
+.testimonial-text {
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.38);
+}
+.testimonial-text-name {
+    color: var(--color-accent);
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+/*
+    Arrow-up
+*/
+.arrow-up {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    color: var(--color-white);
+    font-size: 3rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 100%;
+    background-color: var(--color-black);
+    text-align: center;
+    box-shadow: 5px 5px 0px 0px var(--color-accent);
+}
+
+/*
+    Footer
+*/
+#contact {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 2rem;
+    padding: 1rem;
+}
+.contact-link {
+    color: var(--color-white);
+}
+.contact-link:hover {
+    color: var(--color-accent);
 }
