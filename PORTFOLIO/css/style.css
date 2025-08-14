@@ -223,3 +223,30 @@ section.container {
     background-color: var(--color-accent);
     height: 3px;
 }
+
+/*
+    Work
+*/
+#work {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+.categories {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2.5rem 0;
+}
+.category {
+    position: relative;
+    color: var(--color-white);
+    padding: 0.5rem 3rem;    
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+    font-size: 1.1rem;
+    background-color: var(--color-black);
+}
+.category-count {
+    
+}
+
