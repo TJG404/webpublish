@@ -247,6 +247,53 @@ section.container {
     background-color: var(--color-black);
 }
 .category-count {
-    
+    position: absolute;
+    top: -20px;
+    right: 16px;
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 100%;
+    opacity: 0;
+    transition: all 1000ms ease;
 }
-
+.category.selected {
+    background-color: var(--color-accent);
+    color: var(--color-black);
+}
+.category:hover .category-count {
+    opacity: 1;
+    top: 0;
+}
+.projects {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) ;
+    grid-template-rows: repeat(2, 1fr) ;
+    gap: 1rem;
+}
+.project {
+    position: relative;
+    overflow: hidden;
+}
+.project-img {
+    width: 100%;
+    border-radius: 8px;
+}
+.project-metadata {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-black);
+    opacity: 0;
+}
+.project-metadata:hover {
+    opacity: 0.8;
+}
