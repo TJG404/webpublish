@@ -33,6 +33,15 @@ console.log(output);
 let output2 = `저의 이름은 ${myName}이고, 나이는 ${myAge}살 입니다.`;
 console.log(output2);
 
+//상수 정의 : 상수는 const 키워드로 정의하고, 재정의 불가!!
+const AUDIO_DEVICE_START = 1;
+const AUDIO_DEVICE_CONTINUE = 2;
+const AUDIO_DEVICE_END = 3;
+
+console.log(AUDIO_DEVICE_START);
+console.log(AUDIO_DEVICE_CONTINUE);
+console.log(AUDIO_DEVICE_END);
+
 
 
 
