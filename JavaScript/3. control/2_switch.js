@@ -28,6 +28,21 @@ switch(day) {
 }
 console.log(`선택한 요일은 [${resultDay}] 입니다.`);
 
+//입력받은 값이 홀수면 빨간사과, 짝수면 초록사과 출력
+let number = 100;
+let result = undefined;
+switch(number % 2) {
+    case 0:
+        result = '🍏';
+        break;
+    case 1:
+        result = '🍎';
+        break;
+    default:
+        result = '해당 과일 없음';
+}
+console.log(result);
+
 
 
 
