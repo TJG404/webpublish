@@ -3,6 +3,22 @@ window.addEventListener('DOMContentLoaded', function() {
     showResult('20250101');
 })
 
+/**
+ * KMDB 영화 포스터 검색
+ */
+async function searchMoviePoster(movieNm, openDt) {
+    const key = '59H5F0U0OFQB3R2261VM';
+    let url = `http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/`;
+    url += `search_json2.jsp?collection=kmdb_new2&detail=Y`;
+    url += `&title=${movieNm}&releaseDts=${openDt}`;
+    url += `&ServiceKey=${key}`;
+
+    const result = await fetch(url);
+    const jsonData = await result.json();
+    
+    return jsonData.Data[0].Result[0].posters.split("|")[0];
+}
+
 async function getAPI(sdate) {
     //kobis api 연동
     let key = "1387ed83604df30a0c5d9dfdea0cba00";
@@ -15,8 +31,17 @@ async function getAPI(sdate) {
 
 async function showResult(sdate) {
     let kobis = await getAPI(sdate);
+    let posterList = [];
     let kobisobj = kobis.boxOfficeResult;
     let mlist = kobisobj.dailyBoxOfficeList;
+
+    for(const movie of mlist) {
+        let name = movie.movieNm;
+        let date = movie.openDt.split("-");
+        let poster = await searchMoviePoster(name, date);
+        posterList.push(poster);
+    }
+
     let output = `
         <div>
             <span>검색일 : </span>
@@ -32,8 +57,12 @@ async function showResult(sdate) {
                 <th>개봉일</th>
                 <th>매출액</th>
             </tr>
-            ${mlist.map(movie => `
+            ${mlist.map((movie, index) =>             
+                `                              
                 <tr>
+                    <td>
+                        <img src="${posterList[index]}" />
+                    </td>
                     <td>${movie.rank}</td>
                     <td>${movie.movieNm}</td>
                     <td>${movie.openDt}</td>
