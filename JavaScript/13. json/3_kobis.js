@@ -21,7 +21,7 @@ async function searchMoviePoster(movieNm, openDt) {
 
 async function getAPI(sdate) {
     //kobis api 연동
-    let key = "1387ed83604df30a0c5d9dfdea0cba00";
+    let key = "2c0579b0529bc5042a8b0c5b3149b18b";
     // let sdate = "20250903";
     let url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/`
     url += `searchDailyBoxOfficeList.json?key=${key}&targetDt=${sdate}`;
@@ -61,7 +61,7 @@ async function showResult(sdate) {
                 </tr>
                 ${mlist.map((movie, index) =>             
                     `                              
-                    <tr class="movieInfo">
+                    <tr class="movieInfo" id="${posterList[index]}">
                         <td>${movie.rank}</td>
                         <td>${movie.movieNm}</td>
                         <td>${movie.openDt}</td>
@@ -80,6 +80,21 @@ async function showResult(sdate) {
         showResult(sdate);        
     });
 
-    const movieInfo = document.querySelector(".movieInfo");
+    //
+    let rows = document.querySelectorAll('.movieInfo');
+    console.log(rows);
+    rows.forEach(row => {
+        row.addEventListener('mouseover', ()=>{
+            let imgURL = row.id;
+            row.style.background = 'gray';
+            document.querySelector("#poster").src = imgURL;         
+        });
+
+        row.addEventListener('mouseout', ()=>{
+            row.style.background = 'white';
+        });
+    });
+    
+
 
 }
