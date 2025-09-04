@@ -95,5 +95,4 @@ async function showResult(sdate) {
     });
     
 
-
 }
