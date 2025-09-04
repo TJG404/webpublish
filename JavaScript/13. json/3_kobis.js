@@ -80,9 +80,8 @@ async function showResult(sdate) {
         showResult(sdate);        
     });
 
-    //
+    //테이블 로우별 마우스 이벤트 적용
     let rows = document.querySelectorAll('.movieInfo');
-    console.log(rows);
     rows.forEach(row => {
         row.addEventListener('mouseover', ()=>{
             let imgURL = row.id;
