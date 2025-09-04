@@ -50,26 +50,26 @@ async function showResult(sdate) {
         </div>
         <h3>타입 : ${kobisobj.boxofficeType}</h3>
         <h3>일자 : ${kobisobj.showRange}</h3>
-        <table border=1>
-            <tr>
-                <th>순위</th>
-                <th>제목</th>
-                <th>개봉일</th>
-                <th>매출액</th>
-            </tr>
-            ${mlist.map((movie, index) =>             
-                `                              
+        <div style="display: flex; gap: 20px">
+            <img src="${posterList[0]}" id="poster"/>
+            <table border=1 >
                 <tr>
-                    <td>
-                        <img src="${posterList[index]}" />
-                    </td>
-                    <td>${movie.rank}</td>
-                    <td>${movie.movieNm}</td>
-                    <td>${movie.openDt}</td>
-                    <td>${parseInt(movie.salesAcc).toLocaleString()}</td>
+                    <th>순위</th>
+                    <th>제목</th>
+                    <th>개봉일</th>
+                    <th>매출액</th>
                 </tr>
-                `).join("")}
-        </table>
+                ${mlist.map((movie, index) =>             
+                    `                              
+                    <tr class="movieInfo">
+                        <td>${movie.rank}</td>
+                        <td>${movie.movieNm}</td>
+                        <td>${movie.openDt}</td>
+                        <td>${parseInt(movie.salesAcc).toLocaleString()}</td>
+                    </tr>
+                    `).join("")}
+            </table>
+        </div>
     `;
 
     document.querySelector("#content").innerHTML = output;   
@@ -79,5 +79,7 @@ async function showResult(sdate) {
         let sdate = document.querySelector("#searchDate").value.trim();
         showResult(sdate);        
     });
+
+    const movieInfo = document.querySelector(".movieInfo");
 
 }
