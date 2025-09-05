@@ -1,0 +1,13 @@
+.swiper {
+    border: 1px solid gray;
+    width: 400px;
+    height: 300px;
+}
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-img {
+    width: 50%;
+}
