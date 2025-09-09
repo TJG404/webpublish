@@ -1,13 +1,15 @@
 import { useState } from "react";
 
-export function Counter() {
+export function Counter({click}) {
     const [number, setNumber] = useState(0);
 
     const handleClickIncrement = () => {
-        (number < 10) ? setNumber(number+1) : setNumber(number);      
+        (number < 10) ? setNumber(number+1) : setNumber(number);  
+        click(number);   //부모에게 number 전달    
     }
     const handleClickDecrement = () => {
-        (number > 0) ? setNumber(number-1) : setNumber(0);      
+        (number > 0) ? setNumber(number-1) : setNumber(0);  
+        click(number);    
     }
     const handleClickInit = () => {
         setNumber(0);      
