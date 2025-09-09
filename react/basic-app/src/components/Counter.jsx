@@ -1,26 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export function Counter({click}) {
+export function Counter({click, total, init}) {        
     const [number, setNumber] = useState(0);
 
     const handleClickIncrement = () => {
-        (number < 10) ? setNumber(number+1) : setNumber(number);  
-        click(number);   //부모에게 number 전달    
+        if(number < 10) {
+            setNumber(number+1);
+            click("+");
+        } else setNumber(number);  
     }
     const handleClickDecrement = () => {
-        (number > 0) ? setNumber(number-1) : setNumber(0);  
-        click(number);    
+        if(number > 0) {
+            setNumber(number-1);
+            click("-");    
+        } else setNumber(0);  
     }
     const handleClickInit = () => {
-        setNumber(0);      
+        click(0);
     }
+
+    useEffect(() => {
+        setNumber(0);
+    }, [init]);
 
     return (
         <div className="counter-container">
             <div>
                 <span className="number">{number}</span>
                 <span>/</span>
-                <span className="total-number">0</span>
+                <span className="total-number">{total}</span>
             </div>
             <div>
                 <button type="button"
