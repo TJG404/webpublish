@@ -1,0 +1,15 @@
+{
+    "kobis": {
+        "url": "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?",
+        "key": "2c0579b0529bc5042a8b0c5b3149b18b",
+        "targetDt": "20250101"
+    },
+    "kmdb": {
+        "url": "http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?",
+        "collection": "kmdb_new2",
+        "detail": "Y",
+        "title": "하얼빈",
+        "releaseDts": "20241224",
+        "ServiceKey": "59H5F0U0OFQB3R2261VM"
+    }
+}

@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { fetchData } from '../commons/util.js';
+
 
 /**
  * 베스트 상품 컴포넌트
@@ -6,6 +8,7 @@ import { useState, useEffect } from 'react';
 export function BestProduct() {
     const [cartCount, setCartCount] = useState(0); 
     const [bestProductList, setBestProductList] = useState([]);
+    const [apis, setApis] = useState({});
     
     const handleCartCount = () => {
         setCartCount(cartCount + 1); 
@@ -18,14 +21,17 @@ export function BestProduct() {
         //     .then( jsonData => setBestProductList(jsonData))
         //     .catch(error => console.log(error));
 
-        const fetchData = async () => {
-            const response = await fetch("/data/best_products.json");
-            const jsonData = await response.json();
-            setBestProductList(jsonData);
-        }
-        fetchData();
-        
+        // const fetchData = async () => {
+        //     const response = await fetch("/data/best_products.json");
+        //     const jsonData = await response.json();
+        //     setBestProductList(jsonData);
+        // }
+
+        fetchData("/data/best_products.json", setBestProductList);
     }, []);
+
+    console.log(apis);
+    
 
     return (
         <>
