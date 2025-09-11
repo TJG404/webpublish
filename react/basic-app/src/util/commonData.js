@@ -18,7 +18,7 @@ export async function searchMoviePoster(movieNm, openDt) {
  * KOBIS 영화 일별 박스 오피스
  */
 export async function fetchKobisAPI(sdate) {
-    let key = "2c0579b0529bc5042a8b0c5b3149b18b";
+    let key = "6206e4e96646c240ac59f09bc0164ff9";
     let url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/`
     url += `searchDailyBoxOfficeList.json?key=${key}&targetDt=${sdate}`;
 
