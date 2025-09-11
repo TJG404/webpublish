@@ -9,19 +9,19 @@ export function BestProductImage({img, style, rank, like, icon, icon_style, cart
         cartCount();
     }    
 
-    const {bg, color, radius, width, height} = icon_style;
-       
+    //index.js의 StrickMode가 해제되어 있는 경우, 개발자가 객체, 배열등을 코드로 체크 로직
+    // const {bg, color, radius, width, height} = icon_style || {} ;       
 
     return (
         <div className="best-product-img">
             <ProductImage img={img} style={style} /> 
             {/* <span className="best-product-img-no">{rank}</span> */}
             <Icon   value={rank}
-                    bg={bg}
-                    color={color}
-                    radius={radius}
-                    width={width}
-                    height={height}
+                    bg={icon_style.bg}
+                    color={icon_style.color}
+                    radius={icon_style.radius}
+                    width={icon_style.width}
+                    height={icon_style.height}
                     />
             { like?  
                 <span className="best-product-img-like"

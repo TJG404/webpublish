@@ -21,8 +21,6 @@ export async function fetchKobisAPI(sdate) {
     let key = "6206e4e96646c240ac59f09bc0164ff9";
     let url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/`
     url += `searchDailyBoxOfficeList.json?key=${key}&targetDt=${sdate}`;
-
-    console.log(url);
     
     let response = await fetch(url);
     
