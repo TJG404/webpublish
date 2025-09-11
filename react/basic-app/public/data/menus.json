@@ -4,37 +4,40 @@
         "href": "#",
         "name": "인스타그램",
         "style": {
-            "w": "200px",
+            "w": "80px",
             "h": "30px",
             "bg": "#fff",
-            "color": "#999"
+            "color": "#999",
+            "fs": "0.8rem"
         },
         "isIcon": true,
-        "icon": "❤"
+        "icon": "🎬"
     },
     {
         "href": "#",
         "name": "유투브",
         "style": {
-            "w": "200px",
+            "w": "80px",
             "h": "30px",
             "bg": "#fff",
-            "color": "#999"
+            "color": "#999",
+            "fs": "0.8rem"
         },
         "isIcon": true,
-        "icon": "🚓"
+        "icon": "🔊"
     },
     {
         "href": "#",
         "name": "페이스북",
         "style": {
-            "w": "200px",
+            "w": "80px",
             "h": "30px",
             "bg": "#fff",
-            "color": "#999"
+            "color": "#999",
+            "fs": "0.8rem"
         },
         "isIcon": true,
-        "icon": "🍳"
+        "icon": "🎥"
     }
     ]
 }

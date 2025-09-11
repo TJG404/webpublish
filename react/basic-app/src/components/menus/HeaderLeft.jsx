@@ -6,7 +6,7 @@ export function HeaderLeft() {
     const [menus, setMenus] = useState([]);
 
     useEffect(() => {
-        const fetch = async() => {
+        const fetch = async() => {         
             const data = await fetchData("/data/menus.json");
             setMenus(data.headerLeft);
         }
@@ -23,7 +23,8 @@ export function HeaderLeft() {
                         isIcon={menu.isIcon}
                         icon={menu.icon}  />
                 </li>
-            )}
+            )}         
         </ul>
+
     );
 }
