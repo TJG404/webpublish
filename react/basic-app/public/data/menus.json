@@ -92,5 +92,219 @@
         },
         "isIcon": false,
         "icon": ""
-    }]
+    }],
+    "headerCenter" : [
+    {
+        "href": "#",
+        "name": "예매",
+        "style": {
+            "w": "160px",
+            "h": "50px",
+            "bg": "#000",
+            "color": "#fff",
+            "fs": "0.9rem"
+        },
+        "isIcon": false,
+        "icon": "",
+        "isBorder": true
+    }, 
+    {
+        "href": "#",
+        "name": "영화",
+        "style": {
+            "w": "160px",
+            "h": "50px",
+            "bg": "#000",
+            "color": "#fff",
+            "fs": "0.9rem"
+        },
+        "isIcon": false,
+        "icon": "",
+        "isBorder": true
+    }, 
+    {
+        "href": "#",
+        "name": "영화관",
+        "style": {
+            "w": "160px",
+            "h": "50px",
+            "bg": "#000",
+            "color": "#fff",
+            "fs": "0.9rem"
+        },
+        "isIcon": false,
+        "icon": "",
+        "isBorder": true
+    }, 
+    {
+        "href": "#",
+        "name": "이벤트",
+        "style": {
+            "w": "160px",
+            "h": "50px",
+            "bg": "#000",
+            "color": "#fff",
+            "fs": "0.9rem"
+        },
+        "isIcon": false,
+        "icon": "",
+        "isBorder": true
+    }, 
+    {
+        "href": "#",
+        "name": "스토어",
+        "style": {
+            "w": "160px",
+            "h": "50px",
+            "bg": "#000",
+            "color": "#fff",
+            "fs": "0.9rem"
+        },
+        "isIcon": false,
+        "icon": "",
+        "isBorder": false
+    } 
+    ],
+    "footerTop" : [
+    {
+        "href": "#",
+        "name": "회사소개",
+        "style": {
+            "w": "100px",
+            "h": "20px",
+            "bg": "#fff",
+            "color": "#777",
+            "fs": "0.7rem"
+        },
+        "isIcon": false,
+        "icon": "",
+        "isBorder": true
+    },
+    {
+        "href": "#",
+        "name": "이용약관",
+        "style": {
+            "w": "100px",
+            "h": "20px",
+            "bg": "#fff",
+            "color": "#777",
+            "fs": "0.7rem"
+        },
+        "isIcon": false,
+        "icon": "",
+        "isBorder": true
+    },
+    {
+        "href": "#",
+        "name": "개인정보처리방침",
+        "style": {
+            "w": "120px",
+            "h": "20px",
+            "bg": "#fff",
+            "color": "#777",
+            "fs": "0.7rem"
+        },
+        "isIcon": false,
+        "icon": "",
+        "isBorder": true
+    },
+    {
+        "href": "#",
+        "name": "이메일무단 수집거부",
+        "style": {
+            "w": "120px",
+            "h": "20px",
+            "bg": "#fff",
+            "color": "#777",
+            "fs": "0.7rem"
+        },
+        "isIcon": false,
+        "icon": "",
+        "isBorder": true
+    },
+    {
+        "href": "#",
+        "name": "고정형 영상정보처리기기 운영 및 관리방침",
+        "style": {
+            "w": "250px",
+            "h": "20px",
+            "bg": "#fff",
+            "color": "#777",
+            "fs": "0.7rem"
+        },
+        "isIcon": false,
+        "icon": "",
+        "isBorder": true
+    },
+    {
+        "href": "#",
+        "name": "L.POINT회원안내",
+        "style": {
+            "w": "120px",
+            "h": "20px",
+            "bg": "#fff",
+            "color": "#777",
+            "fs": "0.7rem"
+        },
+        "isIcon": false,
+        "icon": "",
+        "isBorder": true
+    },
+    {
+        "href": "#",
+        "name": "배정기준",
+        "style": {
+            "w": "100px",
+            "h": "20px",
+            "bg": "#fff",
+            "color": "#777",
+            "fs": "0.7rem"
+        },
+        "isIcon": false,
+        "icon": "",
+        "isBorder": true
+    },
+    {
+        "href": "#",
+        "name": "채용안내",
+        "style": {
+            "w": "100px",
+            "h": "20px",
+            "bg": "#fff",
+            "color": "#777",
+            "fs": "0.7rem"
+        },
+        "isIcon": false,
+        "icon": "",
+        "isBorder": true
+    },
+    {
+        "href": "#",
+        "name": "광고/임대문의",
+        "style": {
+            "w": "100px",
+            "h": "20px",
+            "bg": "#fff",
+            "color": "#777",
+            "fs": "0.7rem"
+        },
+        "isIcon": false,
+        "icon": "",
+        "isBorder": true
+    },
+    {
+        "href": "#",
+        "name": "사회적책임",
+        "style": {
+            "w": "100px",
+            "h": "20px",
+            "bg": "#fff",
+            "color": "#777",
+            "fs": "0.7rem"
+        },
+        "isIcon": false,
+        "icon": "",
+        "isBorder": false
+    }
+    ] 
 }
