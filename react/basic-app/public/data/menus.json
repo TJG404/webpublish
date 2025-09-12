@@ -39,5 +39,58 @@
         "isIcon": true,
         "icon": "🎥"
     }
-    ]
+    ],
+    "headerRight" : [
+    {
+        "href": "#",
+        "name": "멤버십",
+        "style": {
+            "w": "80px",
+            "h": "30px",
+            "bg": "#fff",
+            "color": "#999",
+            "fs": "0.8rem"
+        },
+        "isIcon": false,
+        "icon": ""
+    },
+    {
+        "href": "#",
+        "name": "고객센터",
+        "style": {
+            "w": "80px",
+            "h": "30px",
+            "bg": "#fff",
+            "color": "#999",
+            "fs": "0.8rem"
+        },
+        "isIcon": false,
+        "icon": ""
+    },
+    {
+        "href": "#",
+        "name": "단체관람/대관문의",
+        "style": {
+            "w": "120px",
+            "h": "30px",
+            "bg": "#fff",
+            "color": "#999",
+            "fs": "0.8rem"
+        },
+        "isIcon": false,
+        "icon": ""
+    },
+    {
+        "href": "#",
+        "name": "로그인",
+        "style": {
+            "w": "80px",
+            "h": "30px",
+            "bg": "#fff",
+            "color": "#999",
+            "fs": "0.8rem"
+        },
+        "isIcon": false,
+        "icon": ""
+    }]
 }
