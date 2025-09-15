@@ -36,16 +36,11 @@ export function Signup() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const param = {
-            refs: refs,
-            setErrors: setErrors
-        }
-
+        const param = {  refs: refs,   setErrors: setErrors }
         if(validateFormCheck(param)) {
             console.log("submit-->", form);            
         }
-    }
-    
+    }    
 
     return (
     <div className="content">
