@@ -12,7 +12,7 @@ export function Login() {
 
     const handleChangeForm = (event) => {
         const {name, value} = event.target;
-        setForm({...form, [name]: value});                  
+        setForm({...form, [name]: value})
     }
    
     const handleFormReset = () => {  setForm(initForm);  }

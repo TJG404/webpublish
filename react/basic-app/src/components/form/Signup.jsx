@@ -1,7 +1,6 @@
 import './cgvSignup.css';
 
-export default function Signup() {
-  
+export function Signup() { 
 
     return (
     <div className="content">
