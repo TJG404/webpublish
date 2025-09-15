@@ -8,7 +8,8 @@ import './index.css';
 // import App from './AppProduct.js';
 // import App from './AppBoxoffice.js';
 // import App from './AppMenu.js';
-import App from './AppForm.js';
+// import App from './AppForm.js';
+import App from './AppRouter.js';
 import reportWebVitals from './reportWebVitals.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
