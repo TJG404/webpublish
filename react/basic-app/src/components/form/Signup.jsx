@@ -1,37 +1,33 @@
-import { useState, useRef } from 'react';
+import React, { useState, useRef, useMemo } from 'react';
 import { validateFormCheck } from '../../util/validate.js';
+import { initForm } from '../../util/init.js';
 import './cgvSignup.css';
 
 export function Signup() { 
-    const refs = {
-        idRef: useRef(null),
-        pwdRef: useRef(null),
-        cpwdRef: useRef(null),
-        nameRef: useRef(null),
-        phoneRef: useRef(null),
-        emailNameRef: useRef(null),
-        emailDomainRef: useRef(null),
-    };
-    const initForm = {
-        id: "", 
-        pwd: "",
-        cpwd: "",
-        name: "",
-        phone: "",
-        emailName: "",
-        emailDomain: "default"
-    };
-    const [form, setForm] = useState(initForm);
-    const [errors, setErrors] = useState({...initForm, emailDomain: ""});
+    const initArray = ['id', 'pwd', 'cpwd', 'name', 'phone', 'emailName', 'emailDomain'];
+    // const initForm = initArray.reduce((acc,cur) => {  //비동기
+    //         acc[cur] = "";
+    //         return acc;
+    // }, {});
+
+    const refs = useMemo(() => {  //Hooks 비동기식 처리 진행
+        return initArray.reduce((acc,cur) => {
+            acc[`${cur}Ref`] = React.createRef();         
+            return acc;
+        }, {});
+    });   
+
+    const [form, setForm] = useState(initForm(initArray));
+    const [errors, setErrors] = useState({...initForm(initArray), emailDomain: ""});
 
     const handleChangeForm = (e) => {
         const { name, value } = e.target;
         setForm({ ...form, [name]: value});
-        setErrors({...initForm, emailDomain: ""});
+        setErrors({...initForm(initArray), emailDomain: ""});
     }
 
     const handleResetForm = () => {
-        setForm(initForm);       
+        setForm(initForm(initArray));       
     }
 
     const handleSubmit = (e) => {
@@ -44,6 +40,7 @@ export function Signup() {
 
     return (
     <div className="content">
+        
         <div className="join-form center-layout">
             <h1 className="center-title">회원가입(React)</h1>
             <form onSubmit={handleSubmit}>
