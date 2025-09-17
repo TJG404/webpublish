@@ -9,6 +9,49 @@
             { "href":"#contact", "name": "Contact" }        
         ]
     },
-    "content": {},
+    "content": {
+        "home": {   "img": "/images/favicon.ico",
+                    "name": "Judy",
+                    "title": "Junior Developer",
+                    "description": "A software engineer currently residing in Seoul, South Korea"
+                },
+        "about": {
+            "majors": [
+                        { 
+                            "icons": "html",
+                            "title": "Front-end",
+                            "subjects": "HTML, CSS, JavaScript, TypeScript, React, WebAPIs",
+                            "style": "fa-brands fa-html5 major-icon"
+                        },
+                        { 
+                            "icons": "mobile",
+                            "title": "Mobile",
+                            "subjects": "Android Studio, React Native, iOS, Swift, Java, Kotlin",
+                            "style": "fa-solid fa-mobile major-icon"
+                        },
+                        { 
+                            "icons": "server",
+                            "title": "Back-end",
+                            "subjects": "Java, JavaScript, Go, Kotlin, Spring, Spring Boot",
+                            "style": "fa-solid fa-server major-icon"
+                        }
+                    ],
+            "jobs": [
+                        {
+                            "img": "/images/jobs/google.png",
+                            "msg": "google",
+                            "name": "Google as Junior Software Engineer",
+                            "period": "2019 Oct - Until now"
+                        },
+                        {
+                            "img": "/images/jobs/samsung.png",
+                            "msg": "samsung",
+                            "name": "Samsung as Junior Software Engineer",
+                            "period": "2010 Oct - 2019 Oct"
+                        }
+                    ]
+            
+        }                
+    },
     "footer": {}
 }
