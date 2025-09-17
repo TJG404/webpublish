@@ -11,6 +11,11 @@ export function SubTitle({title}) {
     );
 }
 
+export function BottomDescription({description}) {
+    return (
+        <p>{description}</p>        
+    );
+}
 export function Description({style}) {
     return (
         <p className={style}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 

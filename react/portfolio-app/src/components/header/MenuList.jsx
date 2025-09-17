@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Menu } from './Menu.jsx';
 
-export function MenuList() {
+export function MenuList({menus}) {
+    // console.log('menus --> ', menus.menus);
+    
     const menus = [
         { "href":"#home", "name": "Home" },
         { "href":"#about", "name": "About" },

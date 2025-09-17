@@ -1,0 +1,14 @@
+{
+    "header": {
+        "menus": [
+            { "href":"#home", "name": "Home" },
+            { "href":"#about", "name": "About" },
+            { "href":"#skill", "name": "Skill" },
+            { "href":"#work",  "name": "My Work" },
+            { "href":"#testimonial", "name": "Testimonial" },
+            { "href":"#contact", "name": "Contact" }        
+        ]
+    },
+    "content": {},
+    "footer": {}
+}
