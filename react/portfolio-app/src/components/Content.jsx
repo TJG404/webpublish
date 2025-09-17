@@ -10,9 +10,9 @@ export function Content({data}) {
         <>
             <Home data={data.home}/>
             <About data={data.about} />
-            <Skills />
-            <Work />
-            <Testimonials />
+            <Skills data={data.skills} />
+            <Work data={data.work}/>
+            <Testimonials testimonials={data.testimonials}/>
             <ArrowTop />
         </>
     );

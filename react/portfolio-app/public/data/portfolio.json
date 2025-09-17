@@ -51,7 +51,110 @@
                         }
                     ]
             
-        }                
+        },
+        "skills": {
+            "coding": [
+                        {"title": "HTML", "value":"98%", "width":"98%"},
+                        {"title": "CSS", "value":"90%", "width":"90%"},
+                        {"title": "JavaScript", "value":"90%", "width":"90%"},
+                        {"title": "TypeScript", "value":"80%", "width":"80%"},
+                        {"title": "React", "value":"79%", "width":"79%"},
+                        {"title": "NodeJS", "value":"68%", "width":"68%"}
+                    ],
+            "tools": [
+                        "Visual Studio Code",
+                        "IntelliJ",
+                        "Android Studio",
+                        "Eclipse",
+                        "MySQL Workbench"
+                    ],
+            "etc": ["Git", "Scrum Master", "SVN"]
+        },
+        "work": {
+            "categories": [
+                            { "name": "All", "count": "8"},
+                            { "name": "Front-end", "count": "4"},
+                            { "name": "Back-end", "count": "2"},
+                            { "name": "Mobile", "count": "2"}
+                        ],
+            "projects": [
+                            {
+                                "img" : "/images/projects/project1.webp",
+                                "alt" : "project1",
+                                "title" : "Project #1",
+                                "description" : "Clone Coding with HTML, CSS"
+                            },
+                            {
+                                "img" : "/images/projects/project2.webp",
+                                "alt" : "project1",
+                                "title" : "Project #1",
+                                "description" : "Clone Coding with HTML, CSS"
+                            },
+                            {
+                                "img" : "/images/projects/project3.webp",
+                                "alt" : "project1",
+                                "title" : "Project #1",
+                                "description" : "Clone Coding with HTML, CSS"
+                            },
+                            {
+                                "img" : "/images/projects/project4.webp",
+                                "alt" : "project1",
+                                "title" : "Project #1",
+                                "description" : "Clone Coding with HTML, CSS"
+                            },
+                            {
+                                "img" : "/images/projects/project5.webp",
+                                "alt" : "project1",
+                                "title" : "Project #1",
+                                "description" : "Clone Coding with HTML, CSS"
+                            },
+                            {
+                                "img" : "/images/projects/project6.webp",
+                                "alt" : "project1",
+                                "title" : "Project #1",
+                                "description" : "Clone Coding with HTML, CSS"
+                            },
+                            {
+                                "img" : "/images/projects/project7.webp",
+                                "alt" : "project1",
+                                "title" : "Project #1",
+                                "description" : "Clone Coding with HTML, CSS"
+                            },
+                            {
+                                "img" : "/images/projects/project8.webp",
+                                "alt" : "project1",
+                                "title" : "Project #1",
+                                "description" : "Clone Coding with HTML, CSS"
+                            }
+                        ]
+        },
+        "testimonials": [
+                            {
+                                "img": "/images/testimonials/people1.webp",
+                                "alt": "people2",
+                                "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis similique, unde nam totam quam, nisi odio error amet provident iste modi eos dicta, eum suscipit rem illum inventore sapiente blanditiis?",
+                                "name": "James Kim",
+                                "company": "Google"
+                            },
+                            {
+                                "img": "/images/testimonials/people2.webp",
+                                "alt": "people2",
+                                "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis similique, unde nam totam quam, nisi odio error amet provident iste modi eos dicta, eum suscipit rem illum inventore sapiente blanditiis?",
+                                "name": "Smith Park",
+                                "company": "Samsung"
+                            },
+                            {
+                                "img": "/images/testimonials/people3.webp",
+                                "alt": "people3",
+                                "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis similique, unde nam totam quam, nisi odio error amet provident iste modi eos dicta, eum suscipit rem illum inventore sapiente blanditiis?",
+                                "name": "Anna Jin",
+                                "company": "Kakao"
+                            } ]               
     },
-    "footer": {}
+    "footer": {
+        "links": [
+                    { "href": "http://github.com", "type": "github" },
+                    { "href": "http://linkedin.com", "type": "linkedin" }
+                ]
+    }
 }

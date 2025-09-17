@@ -1,31 +1,7 @@
 import { Title, SubTitle } from "../base/Title.jsx";
 import { AvatarImage } from "../base/Avatar.jsx";
 
-export function Testimonials() {
-    const testimonials = [
-        {
-            "img": "/images/testimonials/people1.webp",
-            "alt": "people2",
-            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis similique, unde nam totam quam, nisi odio error amet provident iste modi eos dicta, eum suscipit rem illum inventore sapiente blanditiis?",
-            "name": "James Kim",
-            "company": "Google"
-        },
-        {
-            "img": "/images/testimonials/people2.webp",
-            "alt": "people2",
-            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis similique, unde nam totam quam, nisi odio error amet provident iste modi eos dicta, eum suscipit rem illum inventore sapiente blanditiis?",
-            "name": "Smith Park",
-            "company": "Samsung"
-        },
-        {
-            "img": "/images/testimonials/people3.webp",
-            "alt": "people3",
-            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis similique, unde nam totam quam, nisi odio error amet provident iste modi eos dicta, eum suscipit rem illum inventore sapiente blanditiis?",
-            "name": "Anna Jin",
-            "company": "Kakao"
-        },
-    ];
-
+export function Testimonials({testimonials}) {
     return (
         <section id="testimonial" class="section container">
             <Title title="Testimonial" />

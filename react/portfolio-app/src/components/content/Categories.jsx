@@ -6,14 +6,8 @@ export function Category({style, name, count}) {
     );
 }
 
-export function Categories() {
+export function Categories({categories}) {
     const [name, setName] = useState('All');
-    const categories = [
-        { "name": "All", "count": "8"},
-        { "name": "Front-end", "count": "4"},
-        { "name": "Back-end", "count": "2"},
-        { "name": "Mobile", "count": "2"},
-    ];
     
     return (
         <ul class="categories">

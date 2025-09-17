@@ -3,15 +3,24 @@ import { Header } from './components/Header.jsx';
 import { Content } from './components/Content.jsx';
 import { Footer } from './components/Footer.jsx';
 import './css/style.css';
+import { Categories } from './components/content/Categories.jsx';
 
 export default function App() {
   const init = {
       header: { menus: [] }, 
       content: {  home: {}, 
                   about: {
-                    majors: [],
-                    jobs: []
-                  }}
+                    majors: [], jobs: []
+                  },
+                  skills: {
+                    coding: [], tools: [],  etc: []
+                  },
+                  work: {
+                    categories: [], projects: []
+                  },
+                  testimonials: []
+                },
+      footer: { links: [] }
   };
   const [data, setData] = useState(init);
 
@@ -23,15 +32,12 @@ export default function App() {
     }
     load();  
   }, []);
- 
-  // console.log('jobs-->', data.content.about.jobs);
-  
 
   return (
     <>
       <Header data={data.header} />
       <Content data={data.content}/>
-      <Footer />
+      <Footer data={data.footer} />
     </>
   );
 }

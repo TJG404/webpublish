@@ -11,58 +11,7 @@ export function Project({img, alt, title, description}) {
     );
 }
 
-export function Projects() {
-    const projects = [
-        {
-            "img" : "/images/projects/project1.webp",
-            "alt" : "project1",
-            "title" : "Project #1",
-            "description" : "Clone Coding with HTML, CSS",
-        },
-        {
-            "img" : "/images/projects/project2.webp",
-            "alt" : "project1",
-            "title" : "Project #1",
-            "description" : "Clone Coding with HTML, CSS",
-        },
-        {
-            "img" : "/images/projects/project3.webp",
-            "alt" : "project1",
-            "title" : "Project #1",
-            "description" : "Clone Coding with HTML, CSS",
-        },
-        {
-            "img" : "/images/projects/project4.webp",
-            "alt" : "project1",
-            "title" : "Project #1",
-            "description" : "Clone Coding with HTML, CSS",
-        },
-        {
-            "img" : "/images/projects/project5.webp",
-            "alt" : "project1",
-            "title" : "Project #1",
-            "description" : "Clone Coding with HTML, CSS",
-        },
-        {
-            "img" : "/images/projects/project6.webp",
-            "alt" : "project1",
-            "title" : "Project #1",
-            "description" : "Clone Coding with HTML, CSS",
-        },
-        {
-            "img" : "/images/projects/project7.webp",
-            "alt" : "project1",
-            "title" : "Project #1",
-            "description" : "Clone Coding with HTML, CSS",
-        },
-        {
-            "img" : "/images/projects/project8.webp",
-            "alt" : "project1",
-            "title" : "Project #1",
-            "description" : "Clone Coding with HTML, CSS",
-        },
-    ];
-
+export function Projects({projects}) {    
     return (
         <ul class="projects">
             {projects && projects.map(project => 
