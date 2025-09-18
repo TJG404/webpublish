@@ -1,7 +1,24 @@
 /**
- * 회원가입 폼 체크
+ * Shoppy 로그인 폼 체크
  */
-export function validateFormCheck({refs, setErrors}) {
+export const validateFormCheck = ({ idRef, pwdRef, setErrors, errors }) => {
+    if(idRef.current.value === "") {
+        setErrors({...errors, id: "아이디를 입력해주세요"});
+        idRef.current.focus();
+        return false;
+    } else if(pwdRef.current.value === "") {
+        setErrors({...errors, pwd: "패스워드를 입력해주세요"});
+        pwdRef.current.focus();
+        return false;
+    }
+    return true;
+}
+
+
+/**
+ * Shoppy 회원가입 폼 체크
+ */
+export function validateSignupFormCheck({refs, setErrors}) {
     if(refs.idRef.current.value === "") {
         setErrors({id: "아이디를 입력해주세요"});
         refs.idRef.current.focus();
@@ -11,23 +28,4 @@ export function validateFormCheck({refs, setErrors}) {
         refs.emailDomainRef.current.focus();
         return false;
     }
-
-}
-
-
-/**
- * 로그인 폼 체크
- */
-export function validateLoginCheck(refs, setMsg) {
-    
-    if(refs.idRef.current.value === "") {
-        setMsg({id: "아이디를 입력해주세요"});
-        refs.idRef.current.focus();
-        return false;
-    } else if(refs.passRef.current.value === "") {
-        setMsg({pass: "패스워드를 입력해주세요"});
-        refs.passRef.current.focus();
-        return false;
-    } 
-    return true;
 }

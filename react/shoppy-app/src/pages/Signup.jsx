@@ -1,5 +1,5 @@
-import React, { useState, useRef, useMemo } from 'react';
-import { validateFormCheck } from '../utils/validate.js';
+import React, { useState, useMemo } from 'react';
+import { validateSignupFormCheck } from '../utils/validate.js';
 import { initForm } from '../utils/init.js';
 
 export function Signup() { 
@@ -32,7 +32,7 @@ export function Signup() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const param = {  refs: refs,   setErrors: setErrors }
-        if(validateFormCheck(param)) {
+        if(validateSignupFormCheck(param)) {
             console.log("submit-->", form);            
         }
     }    
