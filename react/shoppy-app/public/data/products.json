@@ -5,6 +5,7 @@
         "name" : "후드티",
         "price": 15000,
         "info" : "분홍색 후드티",
+        "rate": "4.2",
         "imgList" : [
             "/images/1.webp",
             "/images/1.webp",
@@ -17,6 +18,7 @@
         "name" : "후드티",
         "price": 15000,
         "info" : "검정색 후드티",
+        "rate": "2.2",
         "imgList" : [
             "/images/2.webp",
             "/images/2.webp",
@@ -29,6 +31,7 @@
         "name" : "원피스",
         "price": 25000,
         "info" : "원피스",
+        "rate": "4",
         "imgList" : [
             "/images/3.webp",
             "/images/3.webp",
@@ -41,6 +44,7 @@
         "name" : "티셔츠",
         "price": 12000,
         "info" : "티셔츠",
+        "rate": "3.2",
         "imgList" : [
             "/images/4.webp",
             "/images/4.webp",
@@ -53,6 +57,7 @@
         "name" : "티셔츠",
         "price": 20000,
         "info" : "티셔츠",
+        "rate": "5",
         "imgList": [
             "/images/5.webp",
             "/images/5.webp",
@@ -65,6 +70,7 @@
         "name" : "스트레치 비스트 드레스",
         "price": 55000,
         "info" : "스트레치 비스트 드레스",
+        "rate": "3",
         "imgList": [
             "/images/6.webp",
             "/images/6.webp",
@@ -77,6 +83,7 @@
         "name" : "자켓",
         "price": 115000,
         "info" : "자켓",
+        "rate": "3.5",
         "imgList": [
             "/images/7.webp",
             "/images/7.webp",
