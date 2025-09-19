@@ -10,6 +10,10 @@ export function ProductDetail({ addCart }) {
     const [product, setProduct] = useState({});
     const [size, setSize] = useState('XS');
     const [imgList, setImgList] = useState([]);
+    const tabLabels = ['DETAIL', 'REVIEW', 'Q&A', 'RETURN & DELIVERY'];
+    const [tabName, setTabName] = useState('detail');
+    const tabEventNames = ['detail', 'review', 'qna', 'return'];
+
 
     useEffect(()=> {
         const filterData = async () => {
@@ -89,7 +93,27 @@ export function ProductDetail({ addCart }) {
                     </li>               
                 </ul>
             </div>
+
+            <div className='product-detail-tab'>
+                <ul className='tabs'>
+                    { tabLabels && tabLabels.map((label, i) => 
+                        <li className={tabName === tabEventNames[i]? "active": "" }>
+                            <button type="button"
+                                    onClick={()=> setTabName(tabEventNames[i])}
+                                >{label}</button>
+                        </li>
+                    )}
+                </ul>
+
+                {/* {tabName === "detail" &&  디테일컴포넌트}
+                {tabName === "review" &&  리뷰컴포넌트} */}
+
+
+            </div>
+            <div style={{marginBottom:"50px"}}></div>
         </div>
+
+        
     );
 }
 
