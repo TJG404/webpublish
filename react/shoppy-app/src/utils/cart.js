@@ -1,5 +1,5 @@
 
-export function cartItemsCheck(cartItems) {
+export function cartItemsCheck(prevItems, cartItem) {
     //존재여부 체크
     const existItem = prevItems.find((item) => 
                             item.pid === cartItem.pid && item.size === cartItem.size);
