@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FiShoppingBag } from "react-icons/fi";
+import { GiShoppingCart } from "react-icons/gi";
 
 export function Header({cartCount}) {
     return (
@@ -11,7 +12,10 @@ export function Header({cartCount}) {
                 </Link>
                 <nav className='header-right'>
                     <Link to="/all">Products</Link>
-                    <Link to="/cart">MyCart({cartCount})</Link>
+                    <Link to="/cart" className="header-icons-cart-link">
+                        <GiShoppingCart className='header-icons'/>
+                        <span className='header-icons-cart'>{cartCount}</span>
+                    </Link>
                     <Link to="/login">
                         <button type="button">Login</button>
                     </Link>
