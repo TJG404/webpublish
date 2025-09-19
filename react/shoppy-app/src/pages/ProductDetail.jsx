@@ -23,9 +23,11 @@ export function ProductDetail({ addCart }) {
 
     //쇼핑백 추가하기 함수
     const handleAddCartItem = () => {
+        // alert("상품이 카트에 추가되었습니다.");
         const cartItem = {
             pid: product.pid,
-            size: size
+            size: size,
+            qty: 1
         }
         addCart(cartItem);
     }
