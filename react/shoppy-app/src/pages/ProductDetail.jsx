@@ -6,6 +6,8 @@ import { ImageList } from '../components/commons/ImageList.jsx';
 import { StarRating } from '../components/commons/StarRating.jsx';
 import { Detail } from '../components/detailTabs/Detail.jsx';
 import { Review } from '../components/detailTabs/Review.jsx';
+import { QnA } from '../components/detailTabs/QnA.jsx';
+import { Return } from '../components/detailTabs/Return.jsx';
 
 export function ProductDetail({ addCart }) {
     const {pid} = useParams();  // { pid: 1}
@@ -110,9 +112,9 @@ export function ProductDetail({ addCart }) {
                 {tabName === "detail" 
                                 &&  <Detail imgList={imgList} 
                                             info={product.detailInfo}       />}
-
                 {tabName === "review" &&  <Review />}
-
+                {tabName === "qna" &&  <QnA />}
+                {tabName === "return" &&  <Return />}
 
             </div>
             <div style={{marginBottom:"50px"}}></div>
