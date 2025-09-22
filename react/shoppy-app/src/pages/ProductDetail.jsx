@@ -4,6 +4,8 @@ import { axiosData } from '../utils/dataFetch.js';
 import { PiGiftThin } from 'react-icons/pi';
 import { ImageList } from '../components/commons/ImageList.jsx';
 import { StarRating } from '../components/commons/StarRating.jsx';
+import { Detail } from '../components/detailTabs/Detail.jsx';
+import { Review } from '../components/detailTabs/Review.jsx';
 
 export function ProductDetail({ addCart }) {
     const {pid} = useParams();  // { pid: 1}
@@ -105,8 +107,11 @@ export function ProductDetail({ addCart }) {
                     )}
                 </ul>
 
-                {/* {tabName === "detail" &&  디테일컴포넌트}
-                {tabName === "review" &&  리뷰컴포넌트} */}
+                {tabName === "detail" 
+                                &&  <Detail imgList={imgList} 
+                                            info={product.detailInfo}       />}
+
+                {tabName === "review" &&  <Review />}
 
 
             </div>
