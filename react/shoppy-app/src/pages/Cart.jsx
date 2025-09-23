@@ -5,7 +5,7 @@ import { cartItemsAddInfo } from '../utils/cart.js';
 import '../styles/cart.css';
 
 export function Cart({ items }) {
-    const [cartList, setCartList] = useState([]);    
+    const [cartList, setCartList] = useState([]);   
     
     useEffect(()=> {
         const fetch = async() => {
@@ -20,10 +20,20 @@ export function Cart({ items }) {
         setCartList((cartList) => cartList.map((item) => 
                 item.cid === cid ?
                     type === '+'? {...item, qty: item.qty+1}   
-                                : {...item, qty: item.qty-1} 
+                                : item.qty > 1 ? {...item, qty: item.qty-1} : item
                 :   item  
         ));
     }
+
+    //장바구니 아이템 삭제 함수
+    const handleRemoveCartList = (cid) => {
+        setCartList((cartList) => {
+            return cartList.filter(item => !(item.cid === cid));  
+        });
+    }
+   
+    // console.log(cartList);
+    
 
     return (
         <div className='cart-container'>
@@ -46,12 +56,42 @@ export function Cart({ items }) {
                             <button type='button'
                                     onClick={()=>{handleUpdateCartList(item.cid, '+')}}>+</button>
                         </div>
-                        <button className='cart-remove'>
+                        <button className='cart-remove'
+                                onClick={()=>{handleRemoveCartList(item.cid)}}>
                             <RiDeleteBin6Line />
                         </button>
                     </div>
                 </div>    
             )}
+
+            {/* 주문 버튼 출력 */}
+            <>
+                <div className='cart-summary'>
+                    <h3>주문 예상 금액</h3>
+                    <div className='cart-summary-sub'>
+                        <p className='cart-total'>
+                            <label>총 상품 가격 : </label>
+                            <span>10000원</span>
+                        </p>
+                        <p className='cart-total'>
+                            <label>총 할인 가격 : </label>
+                            <span>0원</span>
+                        </p>
+                        <p className='cart-total'>
+                            <label>총 배송비 : </label>
+                            <span>0원</span>
+                        </p>
+                    </div>
+                    <p className='cart-total2'>
+                        <label>총 금액 : </label>
+                        <span>10000원</span>
+                    </p>
+                </div>
+                <div className='cart-actions'>
+                    <button type='button'>주문하기</button>
+                </div>
+            </>
+
         </div>
     );
 }
