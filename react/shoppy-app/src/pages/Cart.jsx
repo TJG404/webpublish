@@ -15,7 +15,15 @@ export function Cart({ items }) {
         fetch();
     }, []);
 
-    console.log('cartList-->', cartList);
+    //수량 업데이트 함수
+    const handleUpdateCartList = (cid, type) => {
+        setCartList((cartList) => cartList.map((item) => 
+                item.cid === cid ?
+                    type === '+'? {...item, qty: item.qty+1}   
+                                : {...item, qty: item.qty-1} 
+                :   item  
+        ));
+    }
 
     return (
         <div className='cart-container'>
@@ -23,6 +31,7 @@ export function Cart({ items }) {
             { cartList && cartList.map(item => 
                 <div key={item.pid}>
                     <div className='cart-item'>
+                        {item.cid}
                         <img src={item.image} alt="product img" />
                         <div className='cart-item-details'>
                             <p className='cart-item-title'>{item.name}</p>
@@ -31,9 +40,11 @@ export function Cart({ items }) {
                                 {parseInt(item.price).toLocaleString()}원</p>
                         </div>
                         <div className='cart-quantity'>
-                            <button type='button'>-</button>
+                            <button type='button'
+                                    onClick={()=>{handleUpdateCartList(item.cid, '-')}}>-</button>
                             <input type='text' value={item.qty} readOnly/>
-                            <button type='button'>+</button>
+                            <button type='button'
+                                    onClick={()=>{handleUpdateCartList(item.cid, '+')}}>+</button>
                         </div>
                         <button className='cart-remove'>
                             <RiDeleteBin6Line />

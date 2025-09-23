@@ -29,8 +29,9 @@ export function cartItemsCheck(prevItems, cartItem) {
             ? { ...item, qty: item.qty + 1 }
             : item
         );
-    } else {         
-        return [...prevItems, {...cartItem} ];  //존재하지 않으면 새로운 item 추가
+    } else {        
+        const cid = Math.floor(Math.random() * 10000000);
+        return [...prevItems, {...cartItem, cid:cid } ];  //존재하지 않으면 새로운 item 추가
     }
 }
 

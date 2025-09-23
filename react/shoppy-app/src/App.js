@@ -23,6 +23,9 @@ export default function App() {
     setCartCount(cartCount + 1);
   }
 
+  console.log(cartItems);
+  
+
   return (
     <BrowserRouter>
       <Routes>
