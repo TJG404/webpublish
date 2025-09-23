@@ -11,6 +11,9 @@ export function cartItemsCheck(prevItems, cartItem) {
             : item
         );
     } else {         
-        return [...prevItems, { ...cartItem }];  //존재하지 않으면 새로운 item 추가
+        return [...prevItems, {...cartItem} ];  //존재하지 않으면 새로운 item 추가
     }
 }
+
+
+
