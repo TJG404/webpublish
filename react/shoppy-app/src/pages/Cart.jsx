@@ -64,8 +64,8 @@ export function Cart({ items, updateCart }) {
                         </div>
                         <div className='cart-quantity'>
                             <button type='button'
-                                    onClick={()=>{
-                                        handleUpdateCartList(item.cid, '-')}}>-</button>
+                                    onClick={()=>{ item.qty > 1 &&
+                                                    handleUpdateCartList(item.cid, '-')}}>-</button>
                             <input type='text' value={item.qty} readOnly/>
                             <button type='button'
                                     onClick={()=>{handleUpdateCartList(item.cid, '+')}}>+</button>
