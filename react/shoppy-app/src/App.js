@@ -7,6 +7,7 @@ import { Login } from './pages/Login.jsx';
 import { Signup } from './pages/Signup.jsx';
 import { ProductDetail } from './pages/ProductDetail.jsx';
 import { Cart } from './pages/Cart.jsx';
+import { CheckoutInfo } from './pages/CheckoutInfo.jsx';
 
 import { cartItemsCheck, updateCartItemsQty } from './utils/cart.js';
 
@@ -55,6 +56,7 @@ export default function App() {
           <Route path="/cart" element={<Cart  items={cartItems} 
                                               updateCart={updateCart}/>} />
           <Route path="/products/:pid" element={<ProductDetail addCart={addCart} />} />
+          <Route path="/checkout" element={<CheckoutInfo />} />
         </Route>
       </Routes>
     </BrowserRouter>

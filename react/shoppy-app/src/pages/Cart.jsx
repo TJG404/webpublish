@@ -45,16 +45,13 @@ export function Cart({ items, updateCart }) {
         updateCart(cid);
     }
 
-    console.log('cartList==>> ', cartList);
-    
-
-
     return (
         <div className='cart-container'>
             <h2 className='cart-header'>장바구니</h2>
             { cartList && cartList.map(item => 
                 <div key={item.pid}>
                     <div className='cart-item'>
+                        {item.cid}
                         <img src={item.image} alt="product img" />
                         <div className='cart-item-details'>
                             <p className='cart-item-title'>{item.name}</p>
@@ -102,9 +99,12 @@ export function Cart({ items, updateCart }) {
                     </p>
                 </div>
                 <div className='cart-actions'>
-                    <button type='button'>주문하기</button>
+                    <button type='button'
+                            >주문하기</button>
                 </div>
             </>
+              
+    
 
         </div>
     );
