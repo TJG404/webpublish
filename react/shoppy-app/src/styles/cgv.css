@@ -666,7 +666,7 @@ footer {
     overflow: hidden;    
 }
 .support-content > nav ul a{
-    width: 90px;
+    width: 110px;
     border: 1px solid var(--color-white);
     border-bottom: 2px solid rgb(137,137,135);
     display: inline-block;
