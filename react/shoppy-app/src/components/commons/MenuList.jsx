@@ -16,7 +16,8 @@ export function MenuList({menus}) {
                         isIcon={menu.isIcon}
                         icon={menu.icon}  
                         style={active === menu.name ? 
-                            "support-active" : "" }
+                            "support-content-menu support-active" 
+                            : "support-content-menu" }
                         handleClick={handleClick}
                         />
                     {menu.isBorder? <span className="menu-list-item-border"></span> : ""}
