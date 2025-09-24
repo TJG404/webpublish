@@ -679,6 +679,11 @@ footer {
     font-size: 12px;
     font-weight: 600;
 }
+.support-active {
+    background-color: var(--color-button);
+    border-left: 1px solid var(--color-button);
+    border-bottom: 2px solid var(--color-button);
+}
 .support-content > nav ul li:first-child a{
     background-color: var(--color-button);
     border-left: 1px solid var(--color-button);

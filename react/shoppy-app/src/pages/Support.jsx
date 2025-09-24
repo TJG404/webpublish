@@ -1,20 +1,26 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { SearchForm } from '../components/commons/SearchForm.jsx';
 import { MenuList } from '../components/commons/MenuList.jsx';
+import { axiosData } from '../utils/dataFetch.js';
 
 export function Support() {
-    const category = [
-        {"name":"제목", "value":"title"}, 
-        {"name":"내용", "value":"content"}, 
-    ];
-    const menus = [
-        { "href":"#", "name":"전체", "style":"filter-menu"},
-        { "href":"#", "name":"시스템점검", "style":"filter-menu"},
-        { "href":"#", "name":"극장", "style":"filter-menu"},
-        { "href":"#", "name":"행사/이벤트", "style":"filter-menu"},
-        { "href":"#", "name":"제휴이벤트", "style":"filter-menu"},
-        { "href":"#", "name":"기타", "style":"filter-menu"}
-    ];
+    const [menus, setMenus] = useState([]);
+    const [category, setCategory] = useState([]);
+    const [list, setList] = useState([]);
+
+    useEffect(()=>{
+        const fetch = async() => {
+            const jsonData = await axiosData("/data/support.json");
+            setMenus(jsonData.menus);
+            setCategory(jsonData.category);
+            setList(jsonData.list);
+        }
+        fetch();
+    }, []);
+
+    console.log( list);
+    
+
     return (  
         <div className="content">
             <div className="support center-layout">
@@ -25,7 +31,7 @@ export function Support() {
                     <nav><MenuList menus={menus} /></nav>
                     <p style={{color:"#777"}}>총 114건이 검색되었습니다. </p>
 
-                    {/* 내용 출력 - 테이블 */}
+                    {/* list 내용 출력 - 테이블 */}
                     <table >
                         <thead>
                             <tr>
@@ -33,16 +39,18 @@ export function Support() {
                             </tr>
                         </thead>
                         <tbody>
+                            {list && list.map((item, idx) => 
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{idx + 1}</td>
+                                    <td>[{item.type}]</td>
+                                    <td>{item.title}</td>
+                                    <td>{item.rdate}</td>
+                                    <td>{item.hits}</td>
                                 </tr>                    
+                            )}
                         </tbody>
                         <tfoot>
-                            <tr><td colspan="5"> 1 2 3 4 5 {">>"} </td></tr>
+                            <tr><td colSpan={5}> 1 2 3 4 5 {">>"} </td></tr>
                         </tfoot>
                     </table>
                 </div>
