@@ -1,11 +1,12 @@
 import { Menu } from "./Menu.jsx";
 import { useState } from 'react';
 
-export function MenuList({menus}) {
-    const [active, setActive] = useState("전체");
-    const handleClick = (name) => { 
-        console.log('name-->', name);        
-        setActive(name); 
+export function MenuList({menus, filterList}) {
+    const [active, setActive] = useState("all");
+    const handleClick = (type) => { 
+        // console.log('name-->', name);        
+        setActive(type); 
+        filterList(type);  //?
     }
     return (
         <ul className="menu-list">
@@ -15,7 +16,8 @@ export function MenuList({menus}) {
                         name={menu.name}                        
                         isIcon={menu.isIcon}
                         icon={menu.icon}  
-                        style={active === menu.name ? 
+                        type={menu.type}
+                        style={active === menu.type ? 
                             "support-content-menu support-active" 
                             : "support-content-menu" }
                         handleClick={handleClick}

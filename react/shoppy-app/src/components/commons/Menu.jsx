@@ -1,9 +1,9 @@
 
-export function Menu({href, name, style, isIcon, icon, handleClick}) {
+export function Menu({href, name, style, isIcon, icon, handleClick, type}) {
     return (
         <a  href={href}
             className={style}
-            onClick={()=> {handleClick(name)}}
+            onClick={()=> {handleClick(type)}}
             >
             { isIcon ? icon : ""} {name}
         </a>
