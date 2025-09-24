@@ -632,7 +632,7 @@ footer {
 ********************************************/
 .support-content {
     /* border: 1px solid green; */
-    width: 700px;
+    width: 900px;
     margin: 0 auto;
     color: var(--color-primary);
     font-size: 11pt;
@@ -689,7 +689,8 @@ footer {
     margin: 40px 0 20px; 
 }
 .support-content > table {
-    width: 700px;
+    width: 100%;
+    color: #777;
     text-align: center;
 }
 .support-content > table,

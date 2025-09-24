@@ -16,7 +16,7 @@ export function Signup() {
         }, {});
     });   
 
-    const [form, setForm] = useState(initForm(initArray));
+    const [form, setForm] = useState(initForm(initArray));  //{id:"hong", ...}
     const [errors, setErrors] = useState({...initForm(initArray), emailDomain: ""});
 
     const handleChangeForm = (e) => {

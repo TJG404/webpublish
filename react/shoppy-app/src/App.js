@@ -8,11 +8,13 @@ import { Signup } from './pages/Signup.jsx';
 import { ProductDetail } from './pages/ProductDetail.jsx';
 import { Cart } from './pages/Cart.jsx';
 import { CheckoutInfo } from './pages/CheckoutInfo.jsx';
+import { Support } from './pages/Support.jsx';
 
 import { cartItemsCheck, updateCartItemsQty } from './utils/cart.js';
 
 import './styles/cgvSignup.css';
 import './styles/cgv.css';
+import './styles/commons.css';
 import './styles/shoppy.css';
 
 export default function App() {
@@ -57,6 +59,7 @@ export default function App() {
                                               updateCart={updateCart}/>} />
           <Route path="/products/:pid" element={<ProductDetail addCart={addCart} />} />
           <Route path="/checkout" element={<CheckoutInfo />} />
+          <Route path="/support" element={<Support />} />
         </Route>
       </Routes>
     </BrowserRouter>
