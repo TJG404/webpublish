@@ -9,6 +9,7 @@ import { ProductDetail } from './pages/ProductDetail.jsx';
 import { Cart } from './pages/Cart.jsx';
 import { CheckoutInfo } from './pages/CheckoutInfo.jsx';
 import { Support } from './pages/Support.jsx';
+import { CartProvider } from './context/CartContext.js';
 
 import { cartItemsCheck, updateCartItemsQty } from './utils/cart.js';
 
@@ -48,6 +49,7 @@ export default function App() {
   
 
   return (
+    <CartProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout cartCount={cartCount} />}>
@@ -63,6 +65,7 @@ export default function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </CartProvider>
   );
 }
 
