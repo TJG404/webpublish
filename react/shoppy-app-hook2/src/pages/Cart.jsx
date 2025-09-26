@@ -1,16 +1,51 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { RiDeleteBin6Line } from 'react-icons/ri';
-import { CartContext } from '../context/CartContext.js';
-import { useCart } from '../hooks/useCart.js';
+import { axiosData } from '../utils/dataFetch.js';
+import { cartItemsAddInfo, getTotalPrice } from '../utils/cart.js';
 import '../styles/cart.css';
 
-export function Cart() {
+export function Cart({ items, updateCart }) {
     const navigate = useNavigate();
-    const { showCart, updateCart, removeCart } = useCart();
-    const { cartList, totalPrice } = useContext(CartContext);
-      
-    useEffect(()=> {  showCart();  }, []);    
+    const [cartList, setCartList] = useState([]);
+    const [totalPrice, setTotalPrice] = useState(0);   
+    
+    useEffect(()=> {
+        const fetch = async() => {
+            const jsonData = await axiosData("/data/products.json");
+            setCartList(cartItemsAddInfo(jsonData, items));
+            setTotalPrice(getTotalPrice(jsonData, items));
+        }
+        fetch();
+    }, []);    
+
+    //수량 업데이트 함수
+    const handleUpdateCartList = (cid, type) => {
+        setCartList((cartList) => cartList.map((item) => 
+                item.cid === cid ?
+                    type === '+'? {...item, qty: item.qty+1}   
+                                : item.qty > 1 ? {...item, qty: item.qty-1} : item
+                :   item  
+        ));
+
+        const findItem = cartList.find((item) => item.cid === cid);
+        type === '+'?  setTotalPrice(totalPrice + findItem.price) 
+                        : findItem.qty > 1 ? setTotalPrice(totalPrice-findItem.price)
+                                        : setTotalPrice(totalPrice);
+        updateCart(cid, type);
+    }
+
+    //장바구니 아이템 삭제 함수
+    const handleRemoveCartList = (cid) => {
+        const findItem = cartList.find(item => item.cid === cid);
+        setTotalPrice(totalPrice - (findItem.qty * findItem.price));
+
+        setCartList((cartList) => {
+            return cartList.filter(item => !(item.cid === cid));  
+        });
+
+        updateCart(cid);
+    }
 
     return (
         <div className='cart-container'>
@@ -28,15 +63,15 @@ export function Cart() {
                         <div className='cart-quantity'>
                             <button type='button'
                                     onClick={()=>{ item.qty > 1 &&
-                                                    updateCart(item.cid, '-')}}>-</button> 
+                                                    handleUpdateCartList(item.cid, '-')}}>-</button>
                             <input type='text' value={item.qty} readOnly/>
                             <button type='button'
-                                    onClick={()=>{updateCart(item.cid, '+')}}>+</button>
+                                    onClick={()=>{handleUpdateCartList(item.cid, '+')}}>+</button>
                         </div>
                         <button className='cart-remove'
-                                onClick={()=>{removeCart(item.cid, item.qty, item.price)}}> 
+                                onClick={()=>{handleRemoveCartList(item.cid)}}>
                             <RiDeleteBin6Line />
-                        </button> 
+                        </button>
                     </div>
                 </div>    
             )}
@@ -68,7 +103,8 @@ export function Cart() {
                     <div className='cart-actions'>
                         <button type='button'
                                 onClick={()=>{
-                                    navigate("/checkout");
+                                    navigate("/checkout", {state: {cartList: cartList, 
+                                                                   totalPrice: totalPrice}});
                                 }}>주문하기</button>
                     </div>
                 </>
@@ -79,7 +115,7 @@ export function Cart() {
                     <img src="/images/cart.jpg" 
                          style={{width:"50%", marginTop:"20px"}} />
                 </div>
-            } 
+            }
         </div>
     );
 }
