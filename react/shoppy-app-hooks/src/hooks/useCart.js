@@ -29,6 +29,17 @@ export function useCart() {
         fetch();
     }
 
-    return { addCart, showCart }
+    //장바구니 수량 변경
+    const updateCart = (cid, type) => {
+        //카트 수량 변경
+        setCartList((cartList) => cartList.map((item) => 
+                item.cid === cid ?
+                    type === '+'? {...item, qty: item.qty+1}   
+                                : item.qty > 1 ? {...item, qty: item.qty-1} : item
+                :   item  
+        ));
+    }
+
+    return { addCart, showCart, updateCart }
 }
 

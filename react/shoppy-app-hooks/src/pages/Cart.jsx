@@ -7,8 +7,8 @@ import { CartContext } from '../context/CartContext.js';
 import { useCart } from '../hooks/useCart.js';
 import '../styles/cart.css';
 
-export function Cart({ updateCart }) {
-    const { showCart } = useCart();
+export function Cart() {
+    const { showCart, updateCart } = useCart();
     const { cartList } = useContext(CartContext);
 
     const navigate = useNavigate();
@@ -26,20 +26,25 @@ export function Cart({ updateCart }) {
     }, []);    
 
     //수량 업데이트 함수
-    // const handleUpdateCartList = (cid, type) => {
-    //     setCartList((cartList) => cartList.map((item) => 
-    //             item.cid === cid ?
-    //                 type === '+'? {...item, qty: item.qty+1}   
-    //                             : item.qty > 1 ? {...item, qty: item.qty-1} : item
-    //             :   item  
-    //     ));
+    const handleUpdateCartList = (cid, type) => {
+        // updateCart(cid, type);
+        // //카트 수량 변경
+        // setCartList((cartList) => cartList.map((item) => 
+        //         item.cid === cid ?
+        //             type === '+'? {...item, qty: item.qty+1}   
+        //                         : item.qty > 1 ? {...item, qty: item.qty-1} : item
+        //         :   item  
+        // ));
 
-    //     const findItem = cartList.find((item) => item.cid === cid);
-    //     type === '+'?  setTotalPrice(totalPrice + findItem.price) 
-    //                     : findItem.qty > 1 ? setTotalPrice(totalPrice-findItem.price)
-    //                                     : setTotalPrice(totalPrice);
-    //     updateCart(cid, type);
-    // }
+        // //수량 변경에 따른 전체 상품 가격 변경
+        // const findItem = cartList.find((item) => item.cid === cid);
+        // type === '+'?  setTotalPrice(totalPrice + findItem.price) 
+        //                 : findItem.qty > 1 ? setTotalPrice(totalPrice-findItem.price)
+        //                                 : setTotalPrice(totalPrice);
+        
+        // //cartCount 변경을 위한 App의 함수 호출
+        // updateCart(cid, type);
+    }
 
     //장바구니 아이템 삭제 함수
     // const handleRemoveCartList = (cid) => {
@@ -67,12 +72,12 @@ export function Cart({ updateCart }) {
                                 {parseInt(item.price).toLocaleString()}원</p>
                         </div>
                         <div className='cart-quantity'>
-                            {/* <button type='button'
+                            <button type='button'
                                     onClick={()=>{ item.qty > 1 &&
-                                                    handleUpdateCartList(item.cid, '-')}}>-</button> */}
+                                                    updateCart(item.cid, '-')}}>-</button> 
                             <input type='text' value={item.qty} readOnly/>
-                            {/* <button type='button'
-                                    onClick={()=>{handleUpdateCartList(item.cid, '+')}}>+</button> */}
+                            <button type='button'
+                                    onClick={()=>{updateCart(item.cid, '+')}}>+</button>
                         </div>
                         {/* <button className='cart-remove'
                                 onClick={()=>{handleRemoveCartList(item.cid)}}> 
