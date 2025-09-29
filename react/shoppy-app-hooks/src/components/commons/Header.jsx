@@ -3,8 +3,12 @@ import { Link } from 'react-router-dom';
 import { FiShoppingBag } from "react-icons/fi";
 import { GiShoppingCart } from "react-icons/gi";
 import { CartContext } from '../../context/CartContext.js';
+import { AuthContext } from '../../context/AuthContext.js';
+import { useAuth } from '../../hooks/useAuth.js';
 
 export function Header() {
+    const { handleLogout } = useAuth();
+    const { isLogin } = useContext(AuthContext);
     const { cartCount } = useContext(CartContext);
 
     return (
@@ -20,15 +24,23 @@ export function Header() {
                         <GiShoppingCart className='header-icons'/>
                         <span className='header-icons-cart'>{cartCount}</span>
                     </Link>
-                    <Link to="/login">
-                        <button type="button">Login</button>
-                    </Link>
+                    { !isLogin && 
+                        <Link to="/login">
+                            <button type="button">Login</button>
+                        </Link>                    
+                    }
+                    { isLogin &&
+                        <button type="button"
+                                onClick={handleLogout}>Logout</button>
+                    }
                     <Link to="/signup">
                         <button type="button">Signup</button>
-                    </Link>                   
-                    <Link to="/support">
-                        <button type="button">Support</button>
-                    </Link>                   
+                    </Link>    
+                    { isLogin &&
+                        <Link to="/support">
+                            <button type="button">Support</button>
+                        </Link>                   
+                    }               
                 </nav>
             </div>
         </div>
