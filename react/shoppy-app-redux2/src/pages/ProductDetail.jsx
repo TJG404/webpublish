@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { axiosData } from '../utils/dataFetch.js';
 import { PiGiftThin } from 'react-icons/pi';
@@ -8,25 +8,26 @@ import { Detail } from '../components/detailTabs/Detail.jsx';
 import { Review } from '../components/detailTabs/Review.jsx';
 import { QnA } from '../components/detailTabs/QnA.jsx';
 import { Return } from '../components/detailTabs/Return.jsx';
+import { useCart } from '../hooks/useCart.js';
+import { useProduct } from '../hooks/useProduct.js';
+import { ProductContext } from '../context/ProductContext.js';
 
-export function ProductDetail({ addCart }) {
+import { addCart } from '../features/cart/cartApi.js';
+import { useSelector, useDispatch} from 'react-redux';
+
+export function ProductDetail() {
+    const dispatch = useDispatch();
     const {pid} = useParams();  // { pid: 1}
-    const [product, setProduct] = useState({});
+    // const { addCart } = useCart();
+    const { filterProduct } = useProduct();
+    const { product, imgList } = useContext(ProductContext);
     const [size, setSize] = useState('XS');
-    const [imgList, setImgList] = useState([]);
     const tabLabels = ['DETAIL', 'REVIEW', 'Q&A', 'RETURN & DELIVERY'];
     const [tabName, setTabName] = useState('detail');
     const tabEventNames = ['detail', 'review', 'qna', 'return'];
-
-
+    
     useEffect(()=> {
-        const filterData = async () => {
-            const jsonData = await axiosData("/data/products.json");
-            const [filterProduct] = await jsonData.filter((item) => item.pid === pid);
-            setProduct(filterProduct); 
-            setImgList(filterProduct.imgList);                
-        }
-        filterData();
+        filterProduct(pid);
     }, []);
 
     //쇼핑백 추가하기 함수
@@ -37,10 +38,10 @@ export function ProductDetail({ addCart }) {
             size: size,
             qty: 1
         }
-        addCart(cartItem);
+        // addCart(cartItem);
+        dispatch(addCart(cartItem));
     }
     
-
     return (
         <div className="content">
             <div className='product-detail-top'>

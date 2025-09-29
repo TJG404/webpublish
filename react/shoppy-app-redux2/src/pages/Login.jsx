@@ -1,10 +1,13 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaRegUser } from "react-icons/fa6";
 import { FaLock } from "react-icons/fa";
 import { validateFormCheck } from '../utils/validate.js';
+import { AuthContext } from '../context/AuthContext.js';
+import { useAuth } from '../hooks/useAuth.js';
 
 export function Login() {
+    const { handleLogin } = useAuth();
     const navigate = useNavigate();
     const idRef = useRef(null);
     const pwdRef = useRef(null);
@@ -42,13 +45,9 @@ export function Login() {
             // console.log('서버전송 ---> ', formData);  
             const did = "test";
             const dpwd = "1234";
-            if(did === formData.id && dpwd === formData.pwd) {
+            if(did === formData.id && dpwd === formData.pwd) {               
                 alert("로그인에 성공하셨습니다.");
-                const loginInfo = {
-                    "userId": formData.id,
-                    "token": "dkfj122345dfdf"
-                }
-                // localStorage.setItem("loginInfo", JSON.stringify(loginInfo)); //객체를 문자열로 저장
+                handleLogin(formData.id);                
                 navigate("/");
             } else {
                 alert("로그인에 실패, 확인후 다시 진행해주세요.");
