@@ -12,7 +12,12 @@ import { useCart } from '../hooks/useCart.js';
 import { useProduct } from '../hooks/useProduct.js';
 import { ProductContext } from '../context/ProductContext.js';
 
+import { useDispatch } from 'react-redux';
+import { addCartItem } from '../feature/cart/cartSlice.js';
+
 export function ProductDetail() {
+    const dispatch = useDispatch();
+
     const {pid} = useParams();  // { pid: 1}
     const { addCart } = useCart();
     const { filterProduct } = useProduct();
@@ -34,7 +39,8 @@ export function ProductDetail() {
             size: size,
             qty: 1
         }
-        addCart(cartItem);
+        // addCart(cartItem);
+        dispatch(addCartItem({"cartItem":cartItem}));
     }
     
 
