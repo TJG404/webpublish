@@ -5,12 +5,19 @@ import { CartContext } from '../context/CartContext.js';
 import { useCart } from '../hooks/useCart.js';
 import '../styles/cart.css';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { showCart } from '../feature/cart/cartAPI.js';
+
 export function Cart() {
+    const dispatch = useDispatch();
+    const cartList = useSelector((state) => state.cart.cartList);
+
     const navigate = useNavigate();
-    const { showCart, updateCart, removeCart } = useCart();
-    const { cartList, totalPrice } = useContext(CartContext);
+    const {  updateCart, removeCart } = useCart();
+    const { totalPrice } = useContext(CartContext);
+   
       
-    useEffect(()=> {  showCart();  }, []);    
+    useEffect(()=> {  dispatch(showCart());  }, []);    
 
     return (
         <div className='cart-container'>

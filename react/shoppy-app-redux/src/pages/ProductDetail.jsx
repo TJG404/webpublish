@@ -13,13 +13,14 @@ import { useProduct } from '../hooks/useProduct.js';
 import { ProductContext } from '../context/ProductContext.js';
 
 import { useDispatch } from 'react-redux';
-import { addCartItem } from '../feature/cart/cartSlice.js';
+// import { addCartItem, updateCartCount } from '../feature/cart/cartSlice.js';
+import { addCart } from '../feature/cart/cartAPI.js';
 
 export function ProductDetail() {
     const dispatch = useDispatch();
 
     const {pid} = useParams();  // { pid: 1}
-    const { addCart } = useCart();
+    // const { addCart } = useCart();
     const { filterProduct } = useProduct();
     const { product, imgList } = useContext(ProductContext);
     const [size, setSize] = useState('XS');
@@ -40,7 +41,7 @@ export function ProductDetail() {
             qty: 1
         }
         // addCart(cartItem);
-        dispatch(addCartItem({"cartItem":cartItem}));
+        dispatch(addCart(cartItem));  //addCart 호출 시 dispatch 전송!!
     }
     
 
