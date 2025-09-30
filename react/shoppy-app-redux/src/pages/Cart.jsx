@@ -5,25 +5,18 @@ import { CartContext } from '../context/CartContext.js';
 import { useCart } from '../hooks/useCart.js';
 import '../styles/cart.css';
 
-import { useSelector, useDispatch} from 'react-redux';
-import { showCart, updateCart  } from '../features/cart/cartApi.js';
-
 export function Cart() {
     const navigate = useNavigate();
-    const {   removeCart } = useCart();
-    // const { totalPrice } = useContext(CartContext);
-
-    const dispatch = useDispatch();
-    const cartList = useSelector(state => state.cart.cartList);
-    const totalPrice = useSelector(state => state.cart.totalPrice);
+    const { showCart, updateCart, removeCart } = useCart();
+    const { cartList, totalPrice } = useContext(CartContext);
       
-    useEffect(()=> {  dispatch(showCart());  }, []);    
+    useEffect(()=> {  showCart();  }, []);    
 
     return (
         <div className='cart-container'>
             <h2 className='cart-header'>장바구니</h2>
             { cartList && cartList.map(item => 
-                <div key={item.cid}>
+                <div key={item.pid}>
                     <div className='cart-item'>
                         <img src={item.image} alt="product img" />
                         <div className='cart-item-details'>
@@ -34,11 +27,11 @@ export function Cart() {
                         </div>
                         <div className='cart-quantity'>
                             <button type='button'
-                                    onClick={()=>{ 
-                                                    dispatch(updateCart(item.cid, '-', item.price))}}>-</button> 
+                                    onClick={()=>{ item.qty > 1 &&
+                                                    updateCart(item.cid, '-')}}>-</button> 
                             <input type='text' value={item.qty} readOnly/>
                             <button type='button'
-                                    onClick={()=>{dispatch(updateCart(item.cid, '+', item.price))}}>+</button>
+                                    onClick={()=>{updateCart(item.cid, '+')}}>+</button>
                         </div>
                         <button className='cart-remove'
                                 onClick={()=>{removeCart(item.cid, item.qty, item.price)}}> 

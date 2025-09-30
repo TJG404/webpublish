@@ -1,5 +1,5 @@
 {
-  "name": "shoppy-app-hooks",
+  "name": "shoppy-app-redux",
   "version": "0.1.0",
   "private": true,
   "type": "module",

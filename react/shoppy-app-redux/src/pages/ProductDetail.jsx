@@ -12,13 +12,9 @@ import { useCart } from '../hooks/useCart.js';
 import { useProduct } from '../hooks/useProduct.js';
 import { ProductContext } from '../context/ProductContext.js';
 
-import { addCart } from '../features/cart/cartApi.js';
-import { useSelector, useDispatch} from 'react-redux';
-
 export function ProductDetail() {
-    const dispatch = useDispatch();
     const {pid} = useParams();  // { pid: 1}
-    // const { addCart } = useCart();
+    const { addCart } = useCart();
     const { filterProduct } = useProduct();
     const { product, imgList } = useContext(ProductContext);
     const [size, setSize] = useState('XS');
@@ -38,10 +34,10 @@ export function ProductDetail() {
             size: size,
             qty: 1
         }
-        // addCart(cartItem);
-        dispatch(addCart(cartItem));
+        addCart(cartItem);
     }
     
+
     return (
         <div className="content">
             <div className='product-detail-top'>

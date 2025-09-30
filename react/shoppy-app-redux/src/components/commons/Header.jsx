@@ -5,23 +5,18 @@ import { GiShoppingCart } from "react-icons/gi";
 import { CartContext } from '../../context/CartContext.js';
 import { AuthContext } from '../../context/AuthContext.js';
 import { useAuth } from '../../hooks/useAuth.js';
-import { useSelector, useDispatch} from 'react-redux';
 
 export function Header() {
     const { handleLogout } = useAuth();
     const { isLogin } = useContext(AuthContext);
-    // const { cartCount } = useContext(CartContext);
-
-    const cartCount = useSelector(state => state.cart.cartCount);
-    console.log('redux::cartCount', cartCount);
-    
+    const { cartCount } = useContext(CartContext);
 
     return (
         <div className="header-outer">
             <div className="header">
                 <Link to="/" className='header-left'>
                     <FiShoppingBag />
-                    <span>Shoppy-redux2</span>
+                    <span>Shoppy-redux(toolkit)</span>
                 </Link>
                 <nav className='header-right'>
                     <Link to="/all">Products</Link>
