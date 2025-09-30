@@ -1,9 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { cartItemsCheck, cartItemsAddInfo } from '../../utils/cart.js';
+import { act } from 'react';
 
 const initialState = {
   cartCount: 0,
-  cartList: []
+  cartList: [],
+  totalPrice: 0
 }
 
 export const cartSlice = createSlice({
@@ -20,12 +22,29 @@ export const cartSlice = createSlice({
     },
     updateCartCount (state) {          
         state.cartCount = state.cartList.reduce((total, item) => total + item.qty, 0);
+    },
+    updateTotalPrice (state) {
+        state.totalPrice 
+            = state.cartList.reduce((total, item) => total + (item.qty * item.price), 0);
+    },
+    updateCartItem (state, action) {
+        const { cid, type } = action.payload;
+        state.cartList = state.cartList.map((item) => 
+                item.cid === cid ?
+                    type === '+'? {...item, qty: item.qty+1}   
+                                : item.qty > 1 ? {...item, qty: item.qty-1} : item
+                :   item  
+                );
+    },
+    removeCartItem (state, action) {
+        const { cid } = action.payload;
+        state.cartList = state.cartList.filter(item => !(item.cid === cid));
     }
-
   },
 })
 
-export const { addCartItem, updateCartCount, showCartItem } 
-            = cartSlice.actions   //API 함수 또는 컴포넌트에서 dispatch(액션함수)
+export const {  addCartItem, updateCartCount, showCartItem, updateTotalPrice,
+                updateCartItem, removeCartItem
+             } = cartSlice.actions   //API 함수 또는 컴포넌트에서 dispatch(액션함수)
 
 export default cartSlice.reducer  //store  import
