@@ -30,11 +30,13 @@ export default function App() {
           <Route path="/all" element={<Products/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<Signup/>} />
-          <Route path="/cart" element={ <Cart/> }  />
+          <Route path="/cart" 
+                  element={  <ProectedPageRoute>
+                                <Cart />
+                            </ProectedPageRoute>  } />
           <Route path="/products/:pid" element={<ProductDetail />} />
           <Route path="/checkout" 
-                 element={
-                            <ProectedPageRoute>
+                 element={  <ProectedPageRoute>
                                 <CheckoutInfo />
                             </ProectedPageRoute>  } />
                 

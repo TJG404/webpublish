@@ -1,10 +1,12 @@
 import React, { useContext, useRef } from 'react';
 import { AuthContext } from '../context/AuthContext.js';
 import { Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export function ProectedPageRoute({ children }) {
     const isAlert = useRef(false);
-    const { isLogin } = useContext(AuthContext);
+    const isLogin = useSelector((state) => state.auth.isLogin);
+    // const { isLogin } = useContext(AuthContext);
 
     if(!isLogin) { //isLogin = false
         if(!isAlert.current) {
