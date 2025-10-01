@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { cartItemsCheck, cartItemsAddInfo } from '../../utils/cart.js';
-import { act } from 'react';
 
 const initialState = {
   cartCount: 0,
